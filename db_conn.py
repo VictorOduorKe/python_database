@@ -2,12 +2,15 @@
 
 import mysql.connector
 from mysql.connector import Error
+from dotenv import load_dotenv
 import os
 
-host_name = os.getenv('db_host', 'localhost')
-user_name = os.getenv('db_user', 'root')
-user_password = os.getenv('db_password', 'Vickyxh2@')
-db_name = os.getenv('db_name', 'my_database')
+load_dotenv()
+
+host_name = os.getenv('db_host')
+user_name = os.getenv('db_user')
+user_password = os.getenv('db_password')
+db_name = os.getenv('db_name')
 
 def create_connection(host_name,user_name,user_password,db_name):
     try:    
